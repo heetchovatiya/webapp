@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Admin Panel</title>
+  <style>
+    /* CSS styles for cards */
+    .card {
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      padding: 10px;
+      margin-bottom: 10px;
+      background-color: #f9f9f9;
+      box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+      position: relative;
+    }
+    .card-header {
+      font-weight: bold;
+      margin-bottom: 5px;
+    }
+    .card-body {
+      margin-bottom: 5px;
+    }
+    .completed-checkbox {
+      position: absolute;
+      bottom: 10px;
+      right: 10px;
+    }
+
+    /* CSS styles for table */
+    table {
+      width: 100%;
+      border-collapse: collapse;
+    }
+    th, td {
+      padding: 8px;
+      text-align: left;
+      border-bottom: 1px solid #ddd;
+    }
+    th {
+      background-color: #f2f2f2;
+    }
+
+    /* CSS styles for search */
+    .search-container {
+      margin-bottom: 10px;
+    }
+    .search-container input[type=text] {
+      width: 200px;
+      padding: 5px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      box-sizing: border-box;
+    }
+    .search-container button {
+      padding: 5px 10px;
+      background-color: #4CAF50;
+      color: white;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+
+    /* CSS styles for responsive layout */
+    @media (max-width: 400px) {
+      .search-container input[type=text] {
+        width: 100%;
+      }
+      .search-container button {
+        width: 100%;
+        margin-top: 10px;
+      }
+    }
+
+    @media (max-width: 400px) {
+      /* Adjust table styles for small screens */
+      table {
+        font-size: 12px;
+      }
+      th, td {
+        padding: 5px;
+      }
+
+      /* Adjust card styles for small screens */
+      .card {
+        margin-bottom: 20px;
+      }
+
+      /* Adjust search container styles for small screens */
+      .search-container input[type=text] {
+        width: 100%;
+      }
+      .search-container button {
+        width: 100%;
+        margin-top: 10px;
+      }
+    }
+
+  </style>
+</head>
+<body>
+  <h1>Admin Panel</h1>
+
+  <h2>History</h2>
+  <div class="search-container">
+    <input type="text" id="searchInput" placeholder="Search user...">
+    <button onclick="search()">Search</button>
+  </div>
+
+  <table id="userTable">
+    <thead>
+      <tr>
+        <th>id</th>
+        <th>First Name</th>
+        <th>Last Name</th>
+        <th>Enrollment No</th>
+        <th>Review</th>
+        <th>no_of_copies_</th>
+        <th>Contact No</th>
+          <th>journal</th>
+
+      </tr>
+    </thead>
+    <tbody>
+      {% for user in users %}
+        <tr>
+            <td>{{ user[0] }}</td>
+            <td>{{ user[1] }}</td>
+            <td>{{ user[2] }}</td>
+            <td>{{ user[3] }}</td>
+            <td>{{ user[4] }}</td>
+            <td>{{ user[5] }}</td>
+            <td>{{ user[6] }}</td>
+            <td>{{ user[7] }}</td>
+        </tr>
+        {% endfor %}
+      <!-- More user data rows -->
+    </tbody>
+  </table>
+
+  <h2>Pending Orders</h2>
+  <div id="pendingOrders">
+    {% for user in users %}
+        {% for file in files_table %}
+
+                <div class="card">
+                    <div class="card-header">>id: {{user[0]}}</div>
+                     <div class="card-body">
+                         <p>name: {{user[1]}}</p>
+                         <p>contact_no: {{user[6]}}</p>
+                         <p>no_of_copies: {{user[5]}}</p>
+                         <p>filename:{{file[1]}}</p>
+                         <a href="{{ url_for('download', file_id=file[0]) }}">{{ file[1] }}</a>
+                     </div>
+                    <input type="checkbox" class="completed-checkbox"> Completed
+                </div>
+
+        {% endfor %}
+      {% endfor %}
+    <!-- More pending orders -->
+  </div>
+
+  <script>
+    const checkboxes = document.querySelectorAll('.completed-checkbox');
+
+    checkboxes.forEach(checkbox => {
+      checkbox.addEventListener('change', () => {
+        const card = checkbox.parentNode;
+        if (checkbox.checked) {
+          card.parentNode.removeChild(card);
+        }
+      });
+    });
+
+    function getting_id()
+    {
+
+    }
+  </script>
+</body>
+</html>

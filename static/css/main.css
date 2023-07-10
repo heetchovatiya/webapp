@@ -1,0 +1,153 @@
+ .home{
+    
+    font-family: Arial, Helvetica, sans-serif;
+
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+    padding-top:2rem;
+    min-height:45rem;
+    position: relative;
+    text-align: center;
+ }
+ .main
+ {
+  position: relative;
+  color: #191816;
+  font-size: 70px;
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  
+ }
+ 
+
+.navbar .navbar-expand-lg li a {
+  color: #f0ebd8;
+}
+
+ @media screen and (max-width: 576px) {
+    #card-box
+    {
+        
+        padding:0px;
+        
+    }
+    #footer
+    {
+      padding: 0px;
+    }
+    #home
+    {
+      padding: 0px;
+    }
+    .card{
+      padding-top: 10px;
+    }
+
+    .col-25, .col-75, input[type=submit] {
+      width: 100%; 
+      margin-top: 0;
+  }
+  
+    
+
+  .nav-item:hover
+  {
+    background-color: #D6E8DB;
+    color: black;
+    border-radius: 5px;
+  }
+
+  .card{
+  
+  border: 2px solid #AFB4FF;    
+  background-color:#D2DAFF;
+  }
+  input[type=button]
+  {
+    background-color:#E5E0FF;
+    color: black;
+  }
+  }
+  
+  .card-img-top
+  {
+    max-height:12rem;
+  }
+  
+  a .nav-link
+  {
+    color: #f0ebd8;
+  }
+  .modal-content {
+    background-color: #e5e0ff;
+    border-radius: 5px;
+}
+
+
+
+
+
+.form {
+  box-sizing: border-box;
+}
+
+input[type=text], select, textarea,input[type=number] {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #f4f2d8;
+  border-radius: 4px;
+  resize: vertical;
+}
+
+label {
+  padding: 12px 12px 12px 0;
+  display: inline-block;
+  font-weight: bold;
+}
+
+input[type=submit] {
+  background-color: #C1D0B5;
+  color: black;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: background-color 0.3s;
+}
+
+input[type=submit]:hover {
+  background-color: #99A98F;
+}
+
+.container {
+  border-radius: 5px;
+  background-color: #C1D0B5;
+  padding: 20px;
+}
+
+.col-25 {
+  float: left;
+  width: 25%;
+  margin-top: 6px;
+}
+
+.col-75 {
+  float: left;
+  width: 75%;
+  margin-top: 6px;
+}
+
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+
+input:placeholder-shown
+{
+  text-overflow: ellipsis;
+
+}
+
