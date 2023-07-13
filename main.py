@@ -34,7 +34,7 @@ def insert():
         contact_no = request.form['contact']
         no_of_copies = request.form['copies']
 
-        print(f"{fname}=={lname}=={eno}=={contact_no}=={review}=={no_of_copies}")
+      
 
         if "dropdown_value" in request.form:
              dropdown_values = request.form['dropdown_value']
