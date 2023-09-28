@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        /* Reset some default browser styles */
+        body, ul {
+            margin: 0;
+            padding: 0;
+        }
+
+        /* Style the user details */
+        .user-details {
+            font-size: medium;
+            background-color: #f4f4f4;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.3);
+            margin: 10px;
+            padding: 15px;
+            width: 80%;
+            max-width: 900px;
+        }
+
+        .user-details h2 {
+            font-size: 1.5rem;
+            margin-bottom: 10px;
+        }
+
+        .user-details p {
+            font-size: 1rem;
+            margin: 5px 0;
+        }
+
+        /* Style the order cards */
+        /* Styles for user cards */
+.order-cards {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start; /* Align cards to the left */
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.order-card {
+    background-color: #f4f4f4;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.3);
+    margin: 10px;
+    padding: 15px;
+    width: calc(25% - 20px); /* Maximum of 4 cards per row on laptops, adjust as needed */
+    box-sizing: border-box; /* Ensure padding is included in width */
+}
+
+/* Media queries for tablet and mobile responsiveness */
+@media (max-width: 992px) { /* Tablet screens */
+    .order-card {
+        width: calc(50% - 20px); /* 2 cards per row on tablets */
+    }
+}
+
+
+@media (max-width: 768px) { /* Mobile screens */
+    .order-card {
+        width: calc(100% - 20px); 
+    }
+        .user-details h2 {
+            font-size: 2rem;
+            margin-bottom: 10px;
+        }
+
+        .user-details p {
+            font-size: 1.5rem;
+            margin: 5px 0;
+        }
+        .user-details {
+            background-color: #f4f4f4;
+            font-size: larger;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.3);
+            margin: 10px;
+            padding: 15px;
+            width: 80%;
+            max-width: 900px;
+            
+        }
+    }
+
+    /* Style the user details section for smaller screens */
+    
+}
+
+
+        .order-card h3 {
+            font-size: 1.2rem;
+            margin-bottom: 10px;
+        }
+
+        .order-card p {
+            font-size: 1rem;
+            margin: 5px 0;
+        }
+
+        .order-card .download-link {
+            display: block;
+            text-align: center;
+            background-color: #007bff;
+            color: white;
+            text-decoration: none;
+            padding: 8px 0;
+            border-radius: 5px;
+            margin-top: 10px;
+        }
+
+        .order-card .download-link:hover {
+            background-color: #0056b3;
+        }
+   
+    </style>
+</head>
+<body>
+    <h1>User Details</h1>
+    <div class="user-details">
+        <h2>User Information</h2>
+        <p>User ID: {{ user._id }}</p>
+        <p>Name: {{ user.name }}</p>
+        <p>Email: {{ user.email }}</p>
+        <p>Contact No: {{ user.contactno }}</p>
+        <!-- Add more user details as needed -->
+    </div>
+    <h2>User Orders</h2>
+    <ul class="order-cards">
+        {% for order in orders %}
+        
+        <li class="order-card">
+            <h3>Order Date: {{ order.created_date}}</h3>
+            <p>Name: {{ order.name }}</p>
+            <p>Suggesion:{{order.review}}</p>
+            <p>No of Copies: {{ order.no_of_copies }}</p>
+            <p>dropddown_Filename: {{ order.dropdown_value }}</p>
+            <p>Filename:{{ order.file_name }} <a class="download-link" href="/download/{{ order.file_name }}" download>Download</a></p>
+            
+        </li>
+        
+        {% endfor %}
+    </ul>
+    
+    
+</body>
+</html>

@@ -25,18 +25,23 @@
     <ul class="nav  justify-content-end">
     
       <li class="nav-item">
-        <a class="nav-link " href="#scrollspyHeading1" style="background-color:black;color: #f0ebd8;">print</a>
+        <a class="nav-link " href="#scrollspyHeading1" style="background-color:inherit;color: #f0ebd8;">print</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link " href="#scrollspyHeading2" style="background-color:black ;color: #f0ebd8;">about</a>
+        <a class="nav-link " href="#scrollspyHeading2" style="background-color:inherit ;color: #f0ebd8;">about</a>
       </li>
+      <li class="nav-item">
+        <a class="nav-link " href="{{ url_for('logout') }}" style="background-color:inherit ;color: #f0ebd8;">logout</a>
+      </li>
+     
+        
 
       
     </ul>
   </nav>
 
   <div id="home" class="container-fluid mx-auto">
-    <div class="home container-fluid" style="background-image: url('static/css/home.jpg');">
+    <div class="home container-fluid" style="background-image: url('../static/home.jpg');">
       <div class="container p-1" style="background-color: #8EA7E9;opacity: 0.7;" >
       <h1 class="main  fw-bold" style="margin-top: 5rem;">Print out</h1> 
       <h1 class="main  fw-bold " >Today!</h1> 
@@ -60,8 +65,8 @@
               <div style="width: 100%;">
                 <div class="form" >
                   <div class="container" style="background-color: #f0ebd8;">
-                    <form action="/" id="modal_form" enctype="multipart/form-data" method = "POST">
-                      <div class="row">
+                    <form action="/dashboard" id="modal_form" enctype="multipart/form-data" method = "POST">
+                      <!-- <div class="row">
                         <div class="col-25">
                           <label for="fname">First Name</label>
                         </div>
@@ -92,7 +97,7 @@
                         <div class="col-75">
                           <input type="text" id="enrollment" name="enrollment" placeholder="Your enrollment no..">
                         </div>
-                      </div>
+                      </div> -->
                       <div class="row">
                         <div class="col-25">
                           <label for="review">Review</label>
@@ -151,7 +156,7 @@
 
                       
                       <div class="row" style="text-align: center;margin-top: 1rem;">
-                        <button type="submit" class="open-modal-btn">submit</button>
+
                         <input type="submit" value="Submit">
 
                       </div>
@@ -179,7 +184,7 @@
       <div class="container-fluid row mx-auto" id="card-box">
 
         <div class="card col-xs-12 col-lg-3 ">
-          <img src="static/card5.jpg" class="card-img-top" alt="...">
+          <img src="../static/card5.jpg" class="card-img-top" alt="...">
           <div class="card-body">
             <h5 class="card-title">black-white</h5>
             <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
@@ -191,7 +196,7 @@
         </div>
 
         <div class="card  col-xs-12 col-lg-3 mx-auto">
-          <img src="static/card6.jpg" class="card-img-top" alt="...">
+          <img src="../static/card6.jpg" class="card-img-top" alt="...">
           <div class="card-body">
             <h5 class="card-title">color</h5>
             <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
@@ -202,7 +207,7 @@
         </div>
 
         <div class="card  col-xs-12 col-lg-3 mx-auto">
-          <img src="static/card7.jpg" class="card-img-top" alt="...">
+          <img src="../static/card7.jpg" class="card-img-top" alt="...">
           <div class="card-body">
             <h5 class="card-title">QB(question bank)</h5>
             <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
@@ -213,7 +218,7 @@
         </div>
 
         <div class="card  col-xs-12 col-lg-3 mx-auto">
-          <img src="static/card8.jpg" class="card-img-top" alt="...">
+          <img src="../static/card8.jpg" class="card-img-top" alt="...">
           <div class="card-body">
             <h5 class="card-title">journal</h5>
             <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>

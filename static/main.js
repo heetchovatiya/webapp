@@ -30,13 +30,20 @@ function remove_file() {
   y.setAttribute("label", "SEM-II");
   
 
-  var z = document.createElement("option");
-  z.setAttribute("value", "Fee");
-   
-  
+  var p = document.createElement("option");
+  p.setAttribute("value", "Fee");
+
   var t = document.createTextNode("fee");
-  z.appendChild(t);
+  
+  var z = document.createElement("option");
+  z.setAttribute("value", "de");
+
+  var s = document.createTextNode("de");
+  
+  p.appendChild(t);
+  z.appendChild(s);
   y.appendChild(z);
+  y.appendChild(p)
   x.appendChild(y);
   d.appendChild(x);
   b.appendChild(c);
@@ -48,14 +55,14 @@ function remove_file() {
 
 
 }
-$(document).ready(function() {
-      $('.open-modal-btn').click(function() {
-        // Load the modal content from the external file
-        $('#modalContainer').load('modal.html', function() {
-          // Display the modal once it's loaded
-          $('#modal').show();
-        });
-      });
-    });
+// $(document).ready(function() {
+//       $('.open-modal-btn').click(function() {
+//         // Load the modal content from the external file
+//         $('#modalContainer').load('modal.html', function() {
+//           // Display the modal once it's loaded
+//           $('#modal').show();
+//         });
+//       });
+//     });
 
   
